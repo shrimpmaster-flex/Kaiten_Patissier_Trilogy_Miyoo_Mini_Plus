@@ -1,0 +1,10 @@
+#!/bin/sh
+# Standalone port: Kaiten Patissier
+GameName="Kaiten Patissier"
+GameDir="KaitenPatissier"
+GameExecutable="launch.sh"
+GameDataFile="kaiten"
+KillAudioserver=1
+PerformanceMode=0
+Arguments=""
+/mnt/SDCARD/Emu/PORTS/launch_standalone.sh "$GameName" "$GameDir" "$GameExecutable" "$Arguments" "$GameDataFile" "$KillAudioserver" "$PerformanceMode"

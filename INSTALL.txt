@@ -1,0 +1,27 @@
+KAITEN PATISSIER TRILOGY — MIYOO MINI PLUS
+ROTATION FRAME FIX — Nov 2026 (OnionOS)
+==========================================
+
+Extract the CONTENTS of this ZIP to the ROOT of the SD card and
+choose merge/overwrite existing files. Your saves are not replaced.
+
+Controls: D-pad move, B rotate, A jump, Y menu.
+
+WHAT CHANGED:
+The hand-written SDL 1.2 surface structure in the previous rotation
+renderer accidentally omitted the internal hwdata field. That shifted
+its clip_rect, making the renderer scan ZERO source pixels even though
+the captured scene had artwork in it. The renderer now uses the correct
+SDL 1.2 memory layout and scans the full 320x240 output for each
+animation frame, allowing SDL to handle final clipping.
+
+DIAGNOSTICS:
+Each game creates rotation-diagnostic.txt in its own Roms/PORTS/Games
+folder when you rotate once. It should now report approx. 76,800
+rotated input samples (normally 320x240) and a positive foreground count.
+If the display still fails, share the new file.
+
+STATUS:
+Native ARM executable packaging, SDL 1.2 layout checks, and software
+rotation regression tests passed. Physical Miyoo Mini Plus animation
+has not been verified here.
